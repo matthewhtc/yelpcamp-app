@@ -1,0 +1,30 @@
+<% include ../partials/header %>
+    
+<header class="jumbotron"> <!--just a container. but has semantic meaning-->
+    <div class="container">
+        <h1>Welcome to The 'Couve!</h1>
+        <p>View our hand-picked spots from all over the City of Glass!!</p>
+        <p>
+            <a class="btn btn-primary btn-lg" href="/campgrounds/new">Add New Spot</a>
+        </p>
+    </div> <!--container-->
+</header> <!--jumbotron-->
+
+<!--images need to be of equal height, or the grid gets messed up -->
+<div class="row text-center" style="display: flex; flex-wrap: wrap;"> <!-- need this flexwrap: defines whether the flex items are forced in a single line or can be flowed into multiple lines -->
+    <% campgrounds.forEach(function(campground) { %>
+        <div class="col-lg-3 col-md-3 col-sm-6">
+            <div class="thumbnail">
+                <img src="<%= campground.image %>"> <!--note we need the brackets cuz even tho u pass it as a string, it doesn't come w/ brackets. just text-->
+                <div class="caption">
+                    <h4><%= campground.name %></h4>
+                </div>
+                <p>
+                    <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">More Info</a>
+                </p>
+            </div>
+        </div>
+    <% }); %>
+</div>
+
+<% include ../partials/footer %>
