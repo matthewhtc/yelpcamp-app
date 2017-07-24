@@ -29,7 +29,7 @@ router.post("/register", function(req, res) {
         }
         //does alot of stuff for us! this bottom line
         passport.authenticate("local")(req, res, function() {
-            req.flash("success", "Welcome to CanuckStays " + user.username); 
+            req.flash("success", "Welcome to The 'Couve, " + user.username); 
             res.redirect("/campgrounds");
         }); 
     });

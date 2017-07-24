@@ -16,7 +16,8 @@ var commentRoutes    = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
     authRoutes       = require("./routes/index"); 
 
-mongoose.connect("mongodb://localhost/yelp_camp"); //making a database dynamically
+// mongoose.connect("mongodb://localhost/yelp_camp"); //making a database dynamically
+mongoose.connect("mongodb://mahfei:191x1nomnom1xx@ds149268.mlab.com:49268/thecouve");
 app.use(bodyParser.urlencoded({extended: true})); //just memorize this line cuz ull see it all the time
 app.set("view engine", "ejs"); 
 app.use(express.static(__dirname + "/public")); 
