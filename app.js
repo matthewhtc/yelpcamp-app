@@ -17,7 +17,8 @@ var commentRoutes    = require("./routes/comments"),
     authRoutes       = require("./routes/index"); 
 
 // console.log(process.env.DATABASEURL); 
-mongoose.connect(process.env.DATABASEURL); //making a database dynamically
+var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp";
+mongoose.connect(url); //making a database dynamically
 
 app.use(bodyParser.urlencoded({extended: true})); //just memorize this line cuz ull see it all the time
 app.set("view engine", "ejs"); 
